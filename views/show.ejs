@@ -1,0 +1,18 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header"><%= todo.thing %></div>
+    <div class="item">
+        <p><%= todo.done %></p>
+        <div class="content">
+            <span><%= todo.created.toDateString() %></span>
+        </div>
+        <form action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
+            <button class="ui red basic button">Delete</button>
+        </form>
+    </div>
+</div>
+
+
+
+<% include partials/footer %>

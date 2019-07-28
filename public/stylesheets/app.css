@@ -1,0 +1,15 @@
+i.icon {
+    font-size: 2em;
+}
+
+.container.main {
+    margin-top: 7em;
+}
+
+.eachTodo {
+    display: block;
+    text-align: center;
+    border: 1px gray solid;
+    width: 60vw;
+    margin: 10px !important;
+}

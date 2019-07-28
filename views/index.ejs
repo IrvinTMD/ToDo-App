@@ -1,0 +1,25 @@
+<% include partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header">Todo List</div>
+        <form class="ui form" action="/todos" method="POST">
+            <div class="field">
+                <label>Todo</label>
+                <input type="text" name="todo[thing]" placeholder="I need to..">
+            </div>
+            <button class="ui violet big basic button" type="submit">Add</button>
+        </form>
+</div>
+
+<% todos.forEach(function(todo){ %>
+    <div class="ui main text segment container eachTodo">
+        <h3><%= todo.thing %></h3>
+        <div><%= todo.created %></div>
+        <a href="/todos/<%= todo._id %>/edit">Edit</a>
+        <form action="/todos/<%= todo._id %>?_method=DELETE" method="POST">
+            <button class="ui red basic button">Done!</button>
+        </form>
+    </div><br/>
+<% }); %>
+
+<% include partials/footer %>
